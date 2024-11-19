@@ -2,14 +2,18 @@
 
 set -e
 
-rm -rf build &> /dev/null
+COLOR_RESET=$(tput sgr0)
+COLOR_HIGHLIGHT=$(tput bold)$(tput setaf 6)
 
-conan install . --output-folder=build --build=missing
+function print_seperate_line() {
+    echo
+    echo "${COLOR_HIGHLIGHT}======================================================================"
+    echo "$1${COLOR_RESET}"
+    echo
+}
 
-meson setup --native-file build/conan_meson_native.ini . build/debug --buildtype debug
-
-cp build/debug/compile_commands.json .
-
+print_seperate_line "Meson: build"
 meson compile -C build/debug
 
+print_seperate_line "Running demo"
 ./build/debug/demo-d

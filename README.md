@@ -34,5 +34,6 @@ python3 -m pip install pipx &&
     pipx ensurepath &&
     pipx install ninja meson conan
 
+./setup.sh
 ./compile_run.sh
 ```
