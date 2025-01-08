@@ -1,10 +1,10 @@
 #include <iostream>
 
-#define ENABLE_FMT
-#define ENABLE_SPDLOG
-#define ENABLE_MSGSL_EXAMPLES
-#define ENABLE_CLI11
-#define ENABLE_DOCTEST
+// #define ENABLE_FMT
+// #define ENABLE_SPDLOG
+// #define ENABLE_MSGSL_EXAMPLES
+// #define ENABLE_CLI11
+// #define ENABLE_DOCTEST
 // #define ENABLE_GTEST
 
 #ifdef ENABLE_FMT

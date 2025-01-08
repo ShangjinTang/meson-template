@@ -30,9 +30,6 @@ rm -rf build &> /dev/null
 print_seperate_line "Cleaning"
 rm -rf build compile_commands.json &> /dev/null
 
-print_seperate_line "Conan: install"
-conan install . --output-folder=build --build=missing
-
 print_seperate_line "Meson: setup"
-meson setup --native-file build/conan_meson_native.ini . build/debug --buildtype debug
-cp build/debug/compile_commands.json .
+meson setup build
+cp build/compile_commands.json .
